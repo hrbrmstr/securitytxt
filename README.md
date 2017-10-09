@@ -114,3 +114,8 @@ x
     ## Contact: bob@rud.is
     ## Encryption: https://keybase.io/hrbrmstr/pgp_keys.asc?fingerprint=e5388172b81c210906f5e5605879179645de9399
     ## Disclosure: Full
+
+Code of Conduct
+---------------
+
+Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

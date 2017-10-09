@@ -7,7 +7,7 @@
 sectxt_info(x)
 }
 \arguments{
-\item{x}{a parsed \code{security.txt} created with \code{\link[=sec_parse]{sec_parse()}}}
+\item{x}{a parsed \code{security.txt} created with \code{\link[=sectxt]{sectxt()}}}
 }
 \value{
 data frame

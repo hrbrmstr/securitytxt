@@ -20,7 +20,7 @@ sectxt_keys <- function(x) {
 #' Retrieve a data frame of security.txt keys/values
 #'
 #' @md
-#' @param x a parsed `security.txt` created with [sec_parse()]
+#' @param x a parsed `security.txt` created with [sectxt()]
 #' @return data frame
 #' @export
 sectxt_info <- function(x) {

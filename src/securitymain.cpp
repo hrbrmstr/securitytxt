@@ -34,7 +34,7 @@ std::vector< std::string > sectxt_keys(SEXP x) {
 //' Retrieve a data frame of security.txt keys/values
 //'
 //' @md
-//' @param x a parsed `security.txt` created with [sec_parse()]
+//' @param x a parsed `security.txt` created with [sectxt()]
 //' @return data frame
 //' @export
 // [[Rcpp::export]]
@@ -44,7 +44,8 @@ DataFrame sectxt_info(SEXP x) {
 
   return(DataFrame::create(
       _["key"] = ptr->sectxtKeys(),
-      _["value"] = ptr->sectxtVals()));
+      _["value"] = ptr->sectxtVals(),
+      _["stringsAsFactors"] = false));
 
 }
 
