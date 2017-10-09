@@ -1,0 +1,70 @@
+---
+output: rmarkdown::github_document
+---
+
+# securitytxt
+
+Identify and Parse Web Security Policies Files
+
+## Description
+
+When security risks in web services are discovered by independent
+security researchers who understand the severity of the risk, they
+often lack the channels to properly disclose them. As a result,
+security issues may be left unreported. The 'security.txt' 'Web Security Policies'
+specification defines a 'IETF' standard to help organizations define the process 
+for security researchers to securely disclose security vulnerabilities. Tools are
+provided to help identify and parse 'security.txt' files to enable analysis of 
+the usage of these policies.
+
+- [IETF Draft](https://tools.ietf.org/html/draft-foudil-securitytxt-00)
+- [Information hub](https://securitytxt.org/)
+- [GitHub Organization](https://github.com/securitytxt)
+
+## What's Inside The Tin
+
+The following functions are implemented:
+
+- `sectxt`:	Parse a 'security.txt' Web Security Policies file & create a 'sectxt' object
+- `sectxt_info`:	Retrieve a data frame of `security.txt` keys/values
+- `sectxt_validate`:	Validate a 'security.txt' Web Security Policies file
+- `sectxt_url`:	Determine `security.txt` URL for a given site/URL
+
+## Installation
+
+```{r eval=FALSE}
+devtools::install_github("hrbrmstr/securitytxt")
+```
+
+```{r message=FALSE, warning=FALSE, error=FALSE, include=FALSE}
+options(width=120)
+```
+
+## Usage
+
+```{r message=FALSE, warning=FALSE, error=FALSE}
+library(securitytxt)
+
+# current verison
+packageVersion("securitytxt")
+
+# built-in example
+x <- sectxt(readLines(system.file("extdata", "security.txt", package="securitytxt")))
+sectxt_info(x)
+
+# "live" example
+(xurl <- sectxt_url("https://securitytxt.org"))
+x <- sectxt(url(xurl))
+sectxt_info(x)
+sectxt_validate(x)
+x
+
+# another "live" example
+(xurl <- sectxt_url("https://rud.is/b"))
+x <- sectxt(url(xurl))
+sectxt_info(x)
+sectxt_validate(x)
+x
+
+```
+

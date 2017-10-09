@@ -1,0 +1,32 @@
+Package: securitytxt
+Type: Package
+Title: Identify and Parse Web Security Policies Files
+Version: 0.1.0
+Date: 2017-10-09
+Authors@R: c(
+    person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre"), 
+           comment = c(ORCID = "0000-0001-5670-2640"))
+  )
+Author: Bob Rudis (bob@rud.is)
+Maintainer: Bob Rudis <bob@rud.is>
+Description: When security risks in web services are discovered by independent
+   security researchers who understand the severity of the risk, they
+   often lack the channels to properly disclose them. As a result,
+   security issues may be left unreported. The 'security.txt' 'Web Security Policies'
+   specification defines a 'IETF' standard to help organizations define the process 
+   for security researchers to securely disclose security vulnerabilities. Tools are
+   provided to help identify and parse 'security.txt' files to enable analysis of 
+   the usage of these policies.
+URL: https://github.com/hrbrmstr/securitytxt
+BugReports: https://github.com/hrbrmstr/securitytxt/issues
+License: AGPL
+Suggests:
+    testthat,
+    covr
+Depends:
+    R (>= 3.2.0)
+Imports:
+    purrr,
+    Rcpp
+RoxygenNote: 6.0.1
+LinkingTo: Rcpp
