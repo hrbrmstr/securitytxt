@@ -1,4 +1,6 @@
 
+[![Build Status](https://travis-ci.org/hrbrmstr/securitytxt.svg?branch=master)](https://travis-ci.org/hrbrmstr/securitytxt) [![Build status](https://ci.appveyor.com/api/projects/status/o654jge4mce4a7lg?svg=true)](https://ci.appveyor.com/project/hrbrmstr/securitytxt) ![Coverage Status](http://img.shields.io/codecov/c/github/hrbrmstr/securitytxt/master.svg)
+
 securitytxt
 ===========
 
