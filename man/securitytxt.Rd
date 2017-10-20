@@ -6,18 +6,23 @@
 \alias{securitytxt-package}
 \title{Identify and Parse Web Security Policies Files}
 \description{
-When security risks in web services are discovered by independent
-security researchers who understand the severity of the risk, they
-often lack the channels to properly disclose them. As a result,
-security issues may be left unreported. The 'security.txt' 'Web Security Policies'
-specification defines a 'IETF' standard to help organizations define the process
-for security researchers to securely disclose security vulnerabilities. Tools are
-provided to help identify and parse 'security.txt' files to enable analysis of
-the usage of these policies.
+When security risks in web services are discovered by independent security
+researchers who understand the severity of the risk, they often lack the
+channels to properly disclose them. As a result, security issues may be left
+unreported. The 'security.txt' 'Web Security Policies'specification defines
+an 'IETF' draft standard
+\url{https://tools.ietf.org/html/draft-foudil-securitytxt-00} to help
+organizations define the process for security researchers to securely
+disclose security vulnerabilities. Tools are provided to help identify and
+parse 'security.txt' files to enable analysis of the usage and adoption of
+these policies.
 }
 \references{
-\href{https://tools.ietf.org/html/draft-foudil-securitytxt-00}{IETF Draft}; \href{https://securitytxt.org/}{Information hub}
-\href{https://github.com/securitytxt}{GitHub Organization}
+\itemize{
+\item \href{https://tools.ietf.org/html/draft-foudil-securitytxt-00}{IETF Draft}
+\item \href{https://securitytxt.org/}{Information hub}
+\item \href{https://github.com/securitytxt}{GitHub Organization}
+}
 }
 \author{
 Bob Rudis (bob@rud.is)

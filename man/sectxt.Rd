@@ -23,6 +23,9 @@ sectxt(url(sectxt_url("https://securitytxt.org")))
 }
 }
 \references{
-\href{https://tools.ietf.org/html/draft-foudil-securitytxt-00}{IETF Draft}; \href{https://securitytxt.org/}{Information hub}
-\href{https://github.com/securitytxt}{GitHub Organization}
+\itemize{
+\item \href{https://tools.ietf.org/html/draft-foudil-securitytxt-00}{IETF Draft}
+\item \href{https://securitytxt.org/}{Information hub}
+\item \href{https://github.com/securitytxt}{GitHub Organization}
+}
 }

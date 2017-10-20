@@ -8,8 +8,10 @@
 #'        _or_ a length >1 character vector that will be concatenated into a single string _or_
 #'        a `connection` object that will be passed to [readLines()], the result of which
 #'        will be concatenated into a single string and parsed and the connection will be closed.
-#' @references [IETF Draft](https://tools.ietf.org/html/draft-foudil-securitytxt-00); [Information hub](https://securitytxt.org/)
-#'     [GitHub Organization](https://github.com/securitytxt)
+#' @references
+#' - [IETF Draft](https://tools.ietf.org/html/draft-foudil-securitytxt-00)
+#' - [Information hub](https://securitytxt.org/)
+#' - [GitHub Organization](https://github.com/securitytxt)
 #' @export
 #' @examples
 #' sectxt(readLines(system.file("extdata", "security.txt", package="securitytxt")))

@@ -1,5 +1,5 @@
-context("basic functionality")
-test_that("we can do something", {
+context("core functionality")
+test_that("extraction and validation work", {
 
   x <- sectxt(readLines(system.file("extdata", "security.txt", package="securitytxt")))
 
