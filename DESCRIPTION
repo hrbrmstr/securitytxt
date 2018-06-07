@@ -18,8 +18,8 @@ Description: When security risks in web services are discovered by independent
    to help organizations define the process for security researchers to securely 
    disclose security vulnerabilities. Tools are provided to help identify and 
    parse 'security.txt' files to enable analysis of the usage and adoption of these policies.
-URL: https://github.com/hrbrmstr/securitytxt
-BugReports: https://github.com/hrbrmstr/securitytxt/issues
+URL: https://gitlab.com/hrbrmstr/securitytxt
+BugReports: https://gitlab.com/hrbrmstr/securitytxt/issues
 Copyright: file inst/COPYRIGHTS
 License: MIT + file LICENSE
 Suggests:

@@ -38,7 +38,7 @@ The following functions are implemented:
 ## Installation
 
 ```{r eval=FALSE}
-devtools::install_github("hrbrmstr/securitytxt")
+devtools::install_git("git://gitlab.com/hrbrmstr/securitytxt")
 ```
 
 ```{r message=FALSE, warning=FALSE, error=FALSE, include=FALSE}

@@ -31,7 +31,7 @@ Installation
 ------------
 
 ``` r
-devtools::install_github("hrbrmstr/securitytxt")
+devtools::install_git("git://gitlab.com/hrbrmstr/securitytxt")
 ```
 
 Usage
