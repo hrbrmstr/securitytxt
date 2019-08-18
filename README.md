@@ -5,7 +5,7 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 [![Signed
 by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keybase.io/hrbrmstr)
 ![Signed commit
-%](https://img.shields.io/badge/Signed_Commits-16.7%25-lightgrey.svg)
+%](https://img.shields.io/badge/Signed_Commits-100%25-lightgrey.svg)
 [![Linux build
 Status](https://travis-ci.org/hrbrmstr/securitytxt.svg?branch=master)](https://travis-ci.org/hrbrmstr/securitytxt)
 [![Windows build
@@ -56,7 +56,15 @@ The following functions are implemented:
 ## Installation
 
 ``` r
+install.packages("securitytxt", repos = "https://cinc.rud.is")
+# or
+remotes::install_git("https://git.rud.is/hrbrmstr/securitytxt.git")
+# or
+remotes::install_git("https://git.sr.ht/~hrbrmstr/securitytxt")
+# or
 remotes::install_gitlab("hrbrmstr/securitytxt")
+# or
+remotes::install_bitbucket("hrbrmstr/securitytxt")
 # or
 remotes::install_github("hrbrmstr/securitytxt")
 ```
