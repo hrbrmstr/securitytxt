@@ -13,77 +13,92 @@
 
 namespace SecTxt {
 
-    void SecurityText::strip(std::string& string) {
-        string.erase(string.begin(), std::find_if(string.begin(), string.end(),
-            std::not1(std::ptr_fun<int, int>(std::isspace))));
-        string.erase(std::find_if(string.rbegin(), string.rend(),
-            std::not1(std::ptr_fun<int, int>(std::isspace))).base(), string.end());
-    }
+  void SecurityText::strip(std::string& string) {
 
-    bool SecurityText::getpair(std::istringstream& stream, std::string& key, std::string& value) {
+    string.erase(
+      string.begin(),
+      std::find_if(
+        string.begin(), string.end(),
+        [](int c) { return(!std::isspace(c)); }
+      )
+    );
 
-        while (getline(stream, key)) {
+    string.erase(
+      std::find_if(
+        string.rbegin(), string.rend(),
+        [](int c) { return(!std::isspace(c)); }
+      ).base(), string.end()
+    );
 
-            size_t index = key.find('#');
+  }
 
-            if (index != std::string::npos) key.resize(index);
+  bool SecurityText::getpair(std::istringstream& stream, std::string& key, std::string& value) {
 
-            // Find the colon and divide it into key and value, skipping malformed lines
-            index = key.find(':');
-            if (index == std::string::npos) continue;
+    while (getline(stream, key)) {
 
-            value.assign(key.begin() + index + 1, key.end());
-            key.resize(index);
+      size_t index = key.find('#');
 
-            // Strip whitespace off of each
-            strip(key);
-            strip(value);
+      if (index != std::string::npos) key.resize(index);
 
-            // Lowercase the key
-            std::transform(key.begin(), key.end(), key.begin(), ::tolower);
+      // Find the colon and divide it into key and value, skipping malformed lines
+      index = key.find(':');
+      if (index == std::string::npos) continue;
 
-            return true;
-        }
-        return false;
-    }
+      value.assign(key.begin() + index + 1, key.end());
+      key.resize(index);
 
-    SecurityText::SecurityText(const std::string& content) {
+      // Strip whitespace off of each
+      strip(key);
+      strip(value);
 
-        orig_file = content;
+      // Lowercase the key
+      std::transform(key.begin(), key.end(), key.begin(), ::tolower);
 
-        std::istringstream input(content);
-
-        if (content.compare(0, 3, "\xEF\xBB\xBF") == 0) input.ignore(3);
-
-        std::string key, value;
-
-        while (SecurityText::getpair(input, key, value)) {
-          st_keys.push_back(key);
-          st_vals.push_back(value);
-        }
+      return true;
 
     }
 
-    std::string SecurityText::rawFile() {
-      return(orig_file);
+    return false;
+
+  }
+
+  SecurityText::SecurityText(const std::string& content) {
+
+    orig_file = content;
+
+    std::istringstream input(content);
+
+    if (content.compare(0, 3, "\xEF\xBB\xBF") == 0) input.ignore(3);
+
+    std::string key, value;
+
+    while (SecurityText::getpair(input, key, value)) {
+      st_keys.push_back(key);
+      st_vals.push_back(value);
     }
 
-    std::vector< std::string > SecurityText::sectxtKeys() {
-      return(st_keys);
-    }
+  }
 
-    std::vector< std::string > SecurityText::sectxtVals() {
-      return(st_vals);
-    }
+  std::string SecurityText::rawFile() {
+    return(orig_file);
+  }
 
-    std::string SecurityText::securityUrl(const std::string& url) {
-        return Url::Url(url)
-            .setUserinfo("")
-            .setPath(".well-known/security.txt")
-            .setParams("")
-            .setQuery("")
-            .setFragment("")
-            .remove_default_port()
-            .str();
-    }
+  std::vector< std::string > SecurityText::sectxtKeys() {
+    return(st_keys);
+  }
+
+  std::vector< std::string > SecurityText::sectxtVals() {
+    return(st_vals);
+  }
+
+  std::string SecurityText::securityUrl(const std::string& url) {
+    return Url::Url(url)
+        .setUserinfo("")
+        .setPath(".well-known/security.txt")
+        .setParams("")
+        .setQuery("")
+        .setFragment("")
+        .remove_default_port()
+        .str();
+  }
 }

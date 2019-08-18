@@ -1,26 +1,21 @@
 ---
-output: rmarkdown::github_document
+output: 
+  rmarkdown::github_document:
+    df_print: kable
+editor_options: 
+  chunk_output_type: console
 ---
+```{r pkg-knitr-opts, include=FALSE}
+hrbrpkghelpr::global_opts()
+```
 
-[![Build Status](https://travis-ci.org/hrbrmstr/securitytxt.svg?branch=master)](https://travis-ci.org/hrbrmstr/securitytxt)
-[![Build status](https://ci.appveyor.com/api/projects/status/o654jge4mce4a7lg?svg=true)](https://ci.appveyor.com/project/hrbrmstr/securitytxt)
-![Coverage Status](http://img.shields.io/codecov/c/github/hrbrmstr/securitytxt/master.svg)
+```{r badges, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::stinking_badges()
+```
 
-# securitytxt
-
-Identify and Parse Web Security Policies Files
-
-## Description
-
-When security risks in web services are discovered by independent
-security researchers who understand the severity of the risk, they
-often lack the channels to properly disclose them. As a result,
-security issues may be left unreported. The 'security.txt' 'Web Security Policies'
-specification defines a 'IETF' standard to help organizations define the process 
-for security researchers to securely disclose security vulnerabilities. 
-
-Tools are provided to identify and parse 'security.txt' files, enabling analysis of 
-the usage of these policies.
+```{r description, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::yank_title_and_description()
+```
 
 - [IETF Draft](https://tools.ietf.org/html/draft-foudil-securitytxt-00)
 - [Information hub](https://securitytxt.org/)
@@ -30,19 +25,14 @@ the usage of these policies.
 
 The following functions are implemented:
 
-- `sectxt`:	Parse a 'security.txt' Web Security Policies file & create a 'sectxt' object
-- `sectxt_info`:	Retrieve a data frame of `security.txt` keys/values
-- `sectxt_validate`:	Validate a 'security.txt' Web Security Policies file
-- `sectxt_url`:	Determine `security.txt` URL for a given site/URL
+```{r ingredients, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::describe_ingredients()
+```
 
 ## Installation
 
-```{r eval=FALSE}
-devtools::install_git("git://gitlab.com/hrbrmstr/securitytxt")
-```
-
-```{r message=FALSE, warning=FALSE, error=FALSE, include=FALSE}
-options(width=120)
+```{r install-ex, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::install_block()
 ```
 
 ## Usage
